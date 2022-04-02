@@ -1,0 +1,96 @@
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="/packman/js" defer></script>
+  <title>Packman example</title>
+  <style>
+    body {
+      display: grid;
+      place-items: center center;
+      background-color: #363636;
+    }
+
+    canvas {
+      border-radius: 8px;
+      background-color: whitesmoke;
+    }
+
+    h1 {
+      position: relative;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    testColor {
+      color: #eebe1f;
+    }
+
+    h2 {
+      font-size: 13px;
+      margin-bottom: 50px;
+    }
+
+    h1,
+    h2,
+    a {
+      color: whitesmoke;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    ul {
+      display: flex;
+      align-items: baseline;
+    }
+
+    li {
+      list-style-type: none;
+      margin: 0 10px;
+    }
+
+    li h2 {
+      margin: 0
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 5px;
+      background-color: #fff;
+    }
+
+    #tips-and-control {
+      color: #fff;
+    }
+
+    #tips-and-control h2 {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <a href="/snake/html"><h2>Snake</h2></a>
+    </li>
+    <li>
+      <a href="/space-invaders/html"><h2>Space Invader</h2></a>
+    </li>
+    <li>
+      <a href="/tetris/html"><h2>Tetris</h2></a>
+    </li>
+  </ul>
+  <h2>
+    Lagging? -> Heroku
+  </h2>
+  <div id="container"></div>
+  <div id="tips-and-control">
+    <h3>Use the arrows</h3>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+{
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "object",
+      "properties": {
+        "ship": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "bullets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number" },
+                  "y": { "type": "number" },
+                  "dir": {
+                    "type": "string",
+                    "enum": [
+                      "UP",
+                      "DOWN",
+                      "RIGHT",
+                      "LEFT"
+                    ]
+                  }
+                },
+                "required": ["x", "y", "dir"]
+              } 
+            },
+            "lives": { "type": "number" }
+          },
+          "required": ["x", "y", "bullets", "lives"]
+        },
+        "enemies":  {
+          "type": "object",
+          "properties": {
+            "instances": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number" },
+                  "y": { "type": "number" }
+                },
+                "required": ["x", "y"]
+              } 
+            },
+            "bullets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number" },
+                  "y": { "type": "number" },
+                  "dir": {
+                    "type": "string",
+                    "enum": [
+                      "UP",
+                      "DOWN",
+                      "RIGHT",
+                      "LEFT"
+                    ]
+                  }
+                },
+                "required": ["x", "y", "dir"]
+              } 
+            },
+            "dir": {
+              "type": "string",
+              "enum": [
+                "UP",
+                "DOWN",
+                "RIGHT",
+                "LEFT"
+              ]
+            },
+            "downStep": { "type": "number" },
+            "shootChance": { "type": "number" }
+          },
+          "required": [
+            "instances",
+            "bullets",
+            "dir",
+            "downStep",
+            "shootChance"
+          ]
+        },
+        "plane": {
+          "type": "object",
+          "properties": {
+            "width": { "type": "number" },
+            "height": { "type": "number" }
+          },
+          "required": ["width", "height"]
+        },
+        "isGameOver": { "type": "boolean" }
+      },
+      "required": [
+        "ship",
+        "enemies",
+        "plane",
+        "isGameOver"
+      ]
+    },
+    "input": {
+      "type": "string",
+      "enum": [
+        "UP",
+        "DOWN",
+        "RIGHT",
+        "LEFT"
+      ]
+    }
+  },
+  "required": ["state"]
+}

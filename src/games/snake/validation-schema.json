@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "object",
+      "properties": {
+        "view": {
+          "type": "object",
+          "properties": {
+            "width": { "type": "number" },
+            "height": { "type": "number" }
+          },
+          "required": ["width", "height"]
+        },
+        "snake": {
+          "type": "object",
+          "properties": {
+            "body": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number" },
+                  "y": { "type": "number" },
+                  "px": { "type": "number" },
+                  "py": { "type": "number" }
+                }
+              } 
+            },
+            "dir": {
+              "type": "string",
+              "enum": [
+                "UP",
+                "DOWN",
+                "RIGHT",
+                "LEFT"
+              ]
+            }
+          },
+          "required": ["body", "dir"]
+        },
+        "food": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" }
+          },
+          "required": ["x", "y"]
+        },
+        "isGameOver": { "type": "boolean" }
+      },
+      "required": ["view", "snake", "food", "isGameOver"]
+    },
+    "input": {
+      "type": "string",
+      "enum": [
+        "UP",
+        "DOWN",
+        "RIGHT",
+        "LEFT"
+      ]
+    }
+  },
+  "required": ["state", "input"]
+}

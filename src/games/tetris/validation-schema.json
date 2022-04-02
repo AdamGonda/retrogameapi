@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "properties": {
+    "state": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "properties": {
+            "active": {
+                "properties": {
+                    "angle": {
+                        "enum": [
+                            "EAST",
+                            "NORTH",
+                            "SOUTH",
+                            "WEST"
+                        ],
+                        "type": "string"
+                    },
+                    "id": {
+                        "enum": [
+                            "L",
+                            "LINE",
+                            "LR",
+                            "SQUARE",
+                            "T",
+                            "Z",
+                            "ZR"
+                        ],
+                        "type": "string"
+                    },
+                    "items": {
+                        "items": {
+                            "properties": {
+                                "isCollided": {
+                                    "type": "boolean"
+                                },
+                                "mark": {
+                                    "enum": [
+                                        "FLOOR",
+                                        "ITEM",
+                                        "WALL",
+                                        false,
+                                        true
+                                    ]
+                                },
+                                "x": {
+                                    "type": "number"
+                                },
+                                "y": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "x",
+                                "y"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "angle",
+                    "id",
+                    "items"
+                ],
+                "type": "object"
+            },
+            "collisionMap": {
+                "patternProperties": {
+                    "^[0-9]+$": {
+                        "patternProperties": {
+                            "^[0-9]+$": {
+                                "enum": [
+                                    "FLOOR",
+                                    "ITEM",
+                                    "WALL"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            },
+            "isGameOver": {
+                "type": "boolean"
+            },
+            "view": {
+                "properties": {
+                    "height": {
+                        "type": "number"
+                    },
+                    "width": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "height",
+                    "width"
+                ],
+                "type": "object"
+            }
+        },
+        "required": [
+            "active",
+            "collisionMap",
+            "isGameOver",
+            "view"
+        ],
+        "type": "object"
+    },
+    "input": {
+    "type": "string",
+    "enum": [
+        "UP",
+        "DOWN",
+        "RIGHT",
+        "LEFT"
+    ]
+    }
+  },
+  "required": ["state"]
+}
