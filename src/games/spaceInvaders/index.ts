@@ -11,7 +11,7 @@ import { State } from './types'
 import { Enemies, Plane, Ship } from './factories'
 import { isGameOver } from './isGameOver'
 
-const PREFIX = '/space-invaders'
+const PREFIX = '/spaceInvaders'
 const validate = new Avj().compile(schema)
 
 const registerRoutes = (app: Application) => {
