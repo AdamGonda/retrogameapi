@@ -1,6 +1,6 @@
 # Retro Game API
 
-Docs: https://www.retrogameapi.com/
+📝: https://www.retrogameapi.com/
 
 ## Little history
 
