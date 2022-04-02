@@ -1,6 +1,6 @@
 # Retro Game API
 
-Site: https://www.retro-game-api.com/
+Docs: https://www.retrogameapi.com/
 
 ## Little history
 
@@ -29,7 +29,3 @@ Of course, this is not an optimal solution, But I thought it maybe can be used f
 - Network latency
 - Concurrency
 - Separation of concerns
-
-### New stuff
-
-So since then, I started implementing other games in this manner and I started using Typescript also. But this current stuff isn't hosted anywhere but I will do it on Heroku when it's done. Last but not least I like to create a cool frontend for this to present the project and the opportunities it's bringing to the curious learner.
