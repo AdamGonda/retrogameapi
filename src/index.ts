@@ -2,6 +2,7 @@ import express from 'express'
 import { config } from 'dotenv'
 import path from 'path'
 import { Request, Response } from 'express'
+import cors from 'cors'
 
 import snake from './games/snake'
 import spaceInvaders from './games/spaceInvaders'
@@ -13,6 +14,7 @@ config()
 const PORT = process.env.PORT
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 snake.registerRoutes(app)
 spaceInvaders.registerRoutes(app)
